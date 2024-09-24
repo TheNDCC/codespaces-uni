@@ -1,8 +1,9 @@
 while True:
     numero = input("Escriba un numero positivo: ")
-    if numero > 0 and int(numero.isalnum()):
+    if numero > 0:
         break
-
+    elif numero.isalnum():
+        break
 suma = 0
 cantidad_pares = 0
 cantidad_impares = 0    
