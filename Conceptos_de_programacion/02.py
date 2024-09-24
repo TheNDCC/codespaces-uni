@@ -1,5 +1,5 @@
 
-contraseña_guardada = "palabraClave"
+contraseña_guardada = input("Establece tu contraseña: ")
 
 intentos_maximos = 3
 intentos = 0
