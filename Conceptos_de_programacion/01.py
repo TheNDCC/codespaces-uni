@@ -1,6 +1,6 @@
 while True:
     numero = int(input("Escriba un numero positivo: "))
-    if numero > 0:
+    if numero > 0 or numero.isalnum():
         break
 
 suma = 0
