@@ -1,10 +1,8 @@
 
 contraseña_guardada = "palabraClave"
 
-
 intentos_maximos = 3
 intentos = 0
-
 
 while intentos < intentos_maximos:
     
