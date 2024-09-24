@@ -1,9 +1,12 @@
 while True:
-    numero = int(input("Escriba un numero positivo: "))
-    if numero > 0:
+    entrada = input("Escriba un número positivo: ")
+
+    if entrada.isdigit() and int(entrada) > 0:
+        numero = int(entrada)
         break
-    elif numero.isalnum():
-        break
+    else:
+        print("Entrada inválida. Por favor, ingresa solo números positivos mayores que 0.")
+
 suma = 0
 cantidad_pares = 0
 cantidad_impares = 0    
