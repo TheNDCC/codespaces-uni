@@ -1,5 +1,5 @@
 while True:
-    numero = int(input("Escriba un numero positivo: "))
+    numero = input("Escriba un numero positivo: ")
     if numero > 0 and int(numero.isalnum()):
         break
 
