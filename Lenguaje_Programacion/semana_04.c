@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(void){
     char nombre1[]="Mi nombre es chelin";
@@ -17,6 +18,8 @@ int main(void){
     int i;
     i = strcmp(nombre1,nombre2);
     printf("i : %d\n",i);
+
+    
 
     return 0;
 }
