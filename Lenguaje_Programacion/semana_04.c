@@ -12,22 +12,7 @@ typedef struct {
 
 // Función para agregar un estudiante
 void agregarEstudiante(Estudiante estudiantes[], int *cantidad) {
-    if (*cantidad >= MAX_ESTUDIANTES) {
-        printf("Límite de estudiantes alcanzado.\n");
-        return;
-    }
 
-    printf("Ingrese el nombre del estudiante: ");
-    scanf(" %[^\n]", estudiantes[*cantidad].nombre);
-    
-    printf("Ingrese el grado (2: segundo año, 3: tercer año): ");
-    scanf("%d", &estudiantes[*cantidad].grado);
-    
-    printf("Ingrese la nota: ");
-    scanf("%f", &estudiantes[*cantidad].nota);
-
-    (*cantidad)++;  // Incrementa el número de estudiantes
-    printf("Estudiante agregado correctamente.\n");
 }
 
 // Función para mostrar los estudiantes
