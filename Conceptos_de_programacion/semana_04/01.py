@@ -6,7 +6,7 @@ def Clasificacion_IMC(IMC):
         return "bajo peso"
     if IMC <= 24.9:
         return "normal"
-    if IMC <= 29.9: 
+    if IMC <= 29.9:
         return "sobrepeso"
     return "obesidad"
 
@@ -21,7 +21,15 @@ def validar_numero_positivo(mensaje):
         except ValueError:
             print("Por favor, ingrese un número.")
 
-numero = validar_numero_positivo("¿Cuántos usuarios se les va a calcular el IMC? ")
+def validar_entero_positivo(mensaje):
+    while True:
+        entrada = input(mensaje)
+        if entrada.isdigit() and int(entrada) > 0:
+            return int(entrada)
+        else:
+            print("Entrada inválida. Por favor, ingresa un número entero positivo.")
+
+numero = validar_entero_positivo("¿Cuántos usuarios se les va a calcular el IMC? ")
 
 for i in range(numero):
     print(f"\nUsuario {i + 1}:")
