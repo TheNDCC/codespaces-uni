@@ -4,12 +4,11 @@
 #define MAX_ESTUDIANTES 100
 #define MAX_NOMBRE 50
 
-// Declaramos tres arreglos, uno para cada atributo
-char nombres[MAX_ESTUDIANTES][MAX_NOMBRE];  // Arreglo para nombres de estudiantes
-int grados[MAX_ESTUDIANTES];                // Arreglo para grados
-float notas[MAX_ESTUDIANTES];               // Arreglo para notas
 
-// Función para agregar un estudiante
+char nombres[MAX_ESTUDIANTES][MAX_NOMBRE];
+int grados[MAX_ESTUDIANTES];              
+float notas[MAX_ESTUDIANTES];   
+
 void agregarEstudiante(int *cantidad) {
     if (*cantidad >= MAX_ESTUDIANTES) {
         printf("Límite de estudiantes alcanzado.\n");
@@ -19,7 +18,7 @@ void agregarEstudiante(int *cantidad) {
     printf("Ingrese el nombre del estudiante: \n");
     scanf(" %[^\n]", nombres[*cantidad]);
 
-    // Validar el grado (2 o 3)
+  
     do {
         printf("Ingrese el grado (2: segundo año, 3: tercer año): \n");
         scanf("%d", &grados[*cantidad]);
@@ -28,7 +27,7 @@ void agregarEstudiante(int *cantidad) {
         }
     } while (grados[*cantidad] != 2 && grados[*cantidad] != 3);
     
-    // Validar la nota (por ejemplo, entre 0 y 100)
+  
     do {
         printf("Ingrese la nota (0 a 100): \n");
         scanf("%f", &notas[*cantidad]);
@@ -37,11 +36,11 @@ void agregarEstudiante(int *cantidad) {
         }
     } while (notas[*cantidad] < 0 || notas[*cantidad] > 100);
 
-    (*cantidad)++;  // Incrementa el número de estudiantes
+    (*cantidad)++; 
     printf("Estudiante agregado correctamente.\n");
 }
 
-// Función para mostrar los estudiantes
+
 void mostrarEstudiantes(int cantidad) {
     if (cantidad == 0) {
         printf("No hay estudiantes registrados.\n");
@@ -54,7 +53,7 @@ void mostrarEstudiantes(int cantidad) {
     }
 }
 
-// Función para actualizar la nota de un estudiante
+
 void actualizarNota(int cantidad) {
     char nombre[MAX_NOMBRE];
     int encontrado = 0;
@@ -83,7 +82,7 @@ void actualizarNota(int cantidad) {
     }
 }
 
-// Función principal
+
 int main() {
     int cantidad = 0, opcion;
 
