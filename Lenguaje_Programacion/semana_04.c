@@ -30,7 +30,7 @@ void agregarEstudiante(int *cantidad) {
     
     // Validar la nota (por ejemplo, entre 0 y 100)
     do {
-        printf("Ingrese la nota (0 a 100): ");
+        printf("Ingrese la nota (0 a 100): \n");
         scanf("%f", &notas[*cantidad]);
         if (notas[*cantidad] < 0 || notas[*cantidad] > 100) {
             printf("Nota inválida. Debe estar entre 0 y 100.\n");
@@ -89,7 +89,7 @@ int main() {
 
     do {
         printf("\n1. Agregar estudiante Nelson\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n\n");
-        printf("Seleccione una opción: ");
+        printf("Seleccione una opción: \n");
         scanf("%d", &opcion);
 
         switch(opcion) {
