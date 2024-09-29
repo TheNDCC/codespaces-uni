@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char main(void){
+int main(){
     char palabra[20];
 
     do{
