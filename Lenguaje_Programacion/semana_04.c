@@ -12,7 +12,7 @@ int main(void){
 
     int largo;
     largo = strlen(nombre1);
-    printf("Longitud de nombre1: %d",largo);
+    printf("Longitud de nombre1: %d\n",largo);
 
     int i;
     i = strcmp(nombre1,nombre2);
