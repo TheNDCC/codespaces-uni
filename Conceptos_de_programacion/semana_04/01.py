@@ -12,6 +12,13 @@ def Clasificacion_IMC(IMC):
         categoria = "obesidad"
     return categoria
 
+def validar_numero_positivo(valor):
+    numero = float(valor)
+    if numero > 0:
+        return numero
+    else:
+        return print("Ingrese un numero valido")
+
 while True:
     entrada = input("Cuanto usuario se les va a calcular el IMC? ")
 
@@ -22,10 +29,16 @@ while True:
         print("Entrada inválida. Por favor, ingresa la cantidad de usuario, otra vez.")
 
 for i in range(0,numero,1):
-    mt = 0
-    kg = 0
-    mt = float(input(" el valor de la altura metros "))
-    kg = float(input("el peso en kg "))
+    mt = None
+    kg = None
+    entrada_01 = float(input(" el valor de la altura metros "))
+    entrada_02 = float(input("el peso en kg "))
+    
+    mt = validar_numero_positivo(entrada_01)
+    kg = validar_numero_positivo(entrada_02)
+    
+    if mt is None and kg is None:
+        print("El valor debe ser un número positivo.")
     
     indice_imc = IMC(kg,mt)
     
