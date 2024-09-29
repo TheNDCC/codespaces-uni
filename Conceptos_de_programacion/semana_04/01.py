@@ -1,5 +1,5 @@
 def IMC(kg,mt):
-    return kg/mt
+    return kg/mt**2
     
 def Clasificacion_IMC(IMC):
     if IMC < 18.5:
