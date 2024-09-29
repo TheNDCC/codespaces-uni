@@ -5,7 +5,7 @@ int main(void){
     char palabra[20];
 
     do{
-        scanf("%c,palabra");
+        scanf("%s,palabra");
 
         if (!feof(stdin)){
             printf("\n%s",palabra);
