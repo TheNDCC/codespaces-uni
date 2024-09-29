@@ -1,5 +1,5 @@
 def IMC(kg,mt):
-    IMC = kg/mt
+    return kg/mt
     
 def Clasificacion_IMC(IMC):
     if IMC < 18.5:
@@ -24,7 +24,7 @@ while True:
 for i in int(numero):
     mt = 0
     kg = 0
-    mt = input(" el valor de la altura metros")
-    mt = input("el peso en kg")
+    mt = int(input(" el valor de la altura metros"))
+    mt = int(input("el peso en kg"))
     
     print(f"Tu IMC es {IMC(kg,mt):.2f}, lo que indica que tienes {Clasificacion_IMC(IMC)}.")
