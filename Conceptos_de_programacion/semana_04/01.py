@@ -19,15 +19,9 @@ def validar_numero_positivo(mensaje):
             else:
                 print("El valor debe ser un número positivo.")
         except ValueError:
-            print("Entrada no válida. Por favor, ingrese un número.")
+            print("Por favor, ingrese un número.")
 
-while True:
-    entrada = input("¿Cuántos usuarios se les va a calcular el IMC? ")
-    if entrada.isdigit() and int(entrada) > 0:
-        numero = int(entrada)
-        break
-    else:
-        print("Entrada inválida. Por favor, ingresa la cantidad de usuarios otra vez.")
+numero = validar_numero_positivo("¿Cuántos usuarios se les va a calcular el IMC? ")
 
 for i in range(numero):
     print(f"\nUsuario {i + 1}:")
