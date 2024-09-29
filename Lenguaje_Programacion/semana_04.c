@@ -12,6 +12,8 @@ typedef struct {
 
 // Función para agregar un estudiante
 void agregarEstudiante(Estudiante estudiantes[], int *cantidad) {
+    printf("Ingrese el nombre del estudiante: ");
+    scanf(" %[^\n]", estudiantes[*cantidad].nombre);
 
 }
 
