@@ -14,7 +14,15 @@ typedef struct {
 void agregarEstudiante(Estudiante estudiantes[], int *cantidad) {
     printf("Ingrese el nombre del estudiante: ");
     scanf(" %[^\n]", estudiantes[*cantidad].nombre);
+    
+    printf("Ingrese el grado (2: segundo año, 3: tercer año): ");
+    scanf("%d", &estudiantes[*cantidad].grado);
+    
+    printf("Ingrese la nota: ");
+    scanf("%f", &estudiantes[*cantidad].nota);
 
+    (*cantidad)++;  // Incrementa el número de estudiantes
+    printf("Estudiante agregado correctamente.\n");
 }
 
 // Función para mostrar los estudiantes
