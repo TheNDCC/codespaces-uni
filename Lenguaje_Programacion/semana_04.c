@@ -64,13 +64,13 @@ void actualizarNota(int cantidad) {
         return;
     }
 
-    printf("Ingrese el nombre del estudiante: ");
+    printf("Ingrese el nombre del estudiante: \n");
     scanf(" %[^\n]", nombre);
 
     for (int i = 0; i < cantidad; i++) {
         if (strcmp(nombres[i], nombre) == 0) {
             printf("Nota actual: %.2f\n", notas[i]);
-            printf("Ingrese la nueva nota: ");
+            printf("Ingrese la nueva nota: \n");
             scanf("%f", &notas[i]);
             printf("Nota actualizada.\n");
             encontrado = 1;
@@ -88,7 +88,7 @@ int main() {
     int cantidad = 0, opcion;
 
     do {
-        printf("\n1. Agregar estudiante Nelson\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n\n");
+        printf("\n1. Agregar estudiante david\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n\n");
         printf("Seleccione una opción: \n");
         scanf("%d", &opcion);
 
