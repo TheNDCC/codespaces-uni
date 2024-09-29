@@ -45,4 +45,3 @@ for i in range(numero):
     
     # Mostrar resultados
     print(f"Tu IMC es {indice_imc:.2f}, lo que indica que tienes {clasificacion}.")
-
