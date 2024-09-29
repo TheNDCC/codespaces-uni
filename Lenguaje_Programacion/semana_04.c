@@ -2,113 +2,77 @@
 #include <string.h>
 
 #define MAX_ESTUDIANTES 100
+#define MAX_NOMBRE 50
 
-// Estructura para almacenar la información de un estudiante
-typedef struct {
-    char nombre[50];
-    int grado; // 2 para segundo año, 3 para tercer año
-    float nota; // Nota del estudiante
-} Estudiante;
+// Declaramos tres arreglos, uno para cada atributo
+char nombres[MAX_ESTUDIANTES][MAX_NOMBRE];  // Arreglo para nombres de estudiantes
+int grados[MAX_ESTUDIANTES];                // Arreglo para grados
+float notas[MAX_ESTUDIANTES];               // Arreglo para notas
 
-// Prototipos de funciones
-void agregarEstudiante(Estudiante estudiantes[], int *cantidad);
-void mostrarEstudiantes(Estudiante estudiantes[], int cantidad);
-void actualizarNota(Estudiante estudiantes[], int cantidad);
-void menu();
-
-int main() {
-    Estudiante estudiantes[MAX_ESTUDIANTES];
-    int cantidad = 0; // Cantidad de estudiantes registrados
-    int opcion;
-
-    do {
-        menu();
-        printf("Seleccione una opción: ");
-        scanf("%d", &opcion);
-
-        switch (opcion) {
-            case 1:
-                agregarEstudiante(estudiantes, &cantidad);
-                break;
-            case 2:
-                mostrarEstudiantes(estudiantes, cantidad);
-                break;
-            case 3:
-                actualizarNota(estudiantes, cantidad);
-                break;
-            case 4:
-                printf("Saliendo del programa...\n");
-                break;
-            default:
-                printf("Opción inválida. Intente de nuevo.\n");
-        }
-    } while (opcion != 4);
-
-    return 0;
-}
-
-// Función para mostrar el menú
-void menu() {
-    printf("\n--- Menú de Gestión de Notas ---\n");
-    printf("1. Agregar estudiante\n");
-    printf("2. Mostrar estudiantes\n");
-    printf("3. Actualizar nota de un estudiante\n");
-    printf("4. Salir\n");
-}
-
-// Función para agregar un nuevo estudiante
-void agregarEstudiante(Estudiante estudiantes[], int *cantidad) {
-    if (*cantidad < MAX_ESTUDIANTES) {
-        printf("Ingrese el nombre del estudiante: ");
-        scanf(" %[^\n]", estudiantes[*cantidad].nombre);
-        
-        do {
-            printf("Ingrese el grado del estudiante (2 para segundo año, 3 para tercer año): ");
-            scanf("%d", &estudiantes[*cantidad].grado);
-        } while (estudiantes[*cantidad].grado != 2 && estudiantes[*cantidad].grado != 3);
-        
-        printf("Ingrese la nota del estudiante: ");
-        scanf("%f", &estudiantes[*cantidad].nota);
-        
-        (*cantidad)++;
-        printf("Estudiante agregado exitosamente.\n");
-    } else {
-        printf("No se pueden agregar más estudiantes. Límite alcanzado.\n");
+// Función para agregar un estudiante
+void agregarEstudiante(int *cantidad) {
+    if (*cantidad >= MAX_ESTUDIANTES) {
+        printf("Límite de estudiantes alcanzado.\n");
+        return;
     }
+
+    printf("Ingrese el nombre del estudiante: ");
+    scanf(" %[^\n]", nombres[*cantidad]);
+
+    // Validar el grado (2 o 3)
+    do {
+        printf("Ingrese el grado (2: segundo año, 3: tercer año): ");
+        scanf("%d", &grados[*cantidad]);
+        if (grados[*cantidad] != 2 && grados[*cantidad] != 3) {
+            printf("Grado inválido. Solo se acepta 2 o 3.\n");
+        }
+    } while (grados[*cantidad] != 2 && grados[*cantidad] != 3);
+    
+    // Validar la nota (por ejemplo, entre 0 y 100)
+    do {
+        printf("Ingrese la nota (0 a 100): ");
+        scanf("%f", &notas[*cantidad]);
+        if (notas[*cantidad] < 0 || notas[*cantidad] > 100) {
+            printf("Nota inválida. Debe estar entre 0 y 100.\n");
+        }
+    } while (notas[*cantidad] < 0 || notas[*cantidad] > 100);
+
+    (*cantidad)++;  // Incrementa el número de estudiantes
+    printf("Estudiante agregado correctamente.\n");
 }
 
-// Función para mostrar la lista de estudiantes
-void mostrarEstudiantes(Estudiante estudiantes[], int cantidad) {
+// Función para mostrar los estudiantes
+void mostrarEstudiantes(int cantidad) {
     if (cantidad == 0) {
         printf("No hay estudiantes registrados.\n");
         return;
     }
 
-    printf("\n--- Lista de Estudiantes ---\n");
+    printf("--- Lista de Estudiantes ---\n");
     for (int i = 0; i < cantidad; i++) {
-        printf("Nombre: %s | Grado: %d | Nota: %.2f\n", estudiantes[i].nombre, estudiantes[i].grado, estudiantes[i].nota);
+        printf("Nombre: %s | Grado: %d | Nota: %.2f\n", nombres[i], grados[i], notas[i]);
     }
 }
 
 // Función para actualizar la nota de un estudiante
-void actualizarNota(Estudiante estudiantes[], int cantidad) {
+void actualizarNota(int cantidad) {
+    char nombre[MAX_NOMBRE];
+    int encontrado = 0;
+
     if (cantidad == 0) {
         printf("No hay estudiantes registrados.\n");
         return;
     }
 
-    char nombre[50];
-    int encontrado = 0;
-
-    printf("Ingrese el nombre del estudiante cuya nota desea actualizar: ");
+    printf("Ingrese el nombre del estudiante: ");
     scanf(" %[^\n]", nombre);
 
     for (int i = 0; i < cantidad; i++) {
-        if (strcmp(estudiantes[i].nombre, nombre) == 0) {
-            printf("Nota actual de %s: %.2f\n", estudiantes[i].nombre, estudiantes[i].nota);
+        if (strcmp(nombres[i], nombre) == 0) {
+            printf("Nota actual: %.2f\n", notas[i]);
             printf("Ingrese la nueva nota: ");
-            scanf("%f", &estudiantes[i].nota);
-            printf("Nota actualizada exitosamente.\n");
+            scanf("%f", &notas[i]);
+            printf("Nota actualizada.\n");
             encontrado = 1;
             break;
         }
@@ -117,4 +81,25 @@ void actualizarNota(Estudiante estudiantes[], int cantidad) {
     if (!encontrado) {
         printf("Estudiante no encontrado.\n");
     }
+}
+
+// Función principal
+int main() {
+    int cantidad = 0, opcion;
+
+    do {
+        printf("\n1. Agregar estudiante\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+            case 1: agregarEstudiante(&cantidad); break;
+            case 2: mostrarEstudiantes(cantidad); break;
+            case 3: actualizarNota(cantidad); break;
+            case 4: printf("Saliendo...\n"); break;
+            default: printf("Opción inválida.\n");
+        }
+    } while (opcion != 4);
+
+    return 0;
 }
