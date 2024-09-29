@@ -19,6 +19,9 @@ int main(void){
     i = strcmp(nombre1,nombre2);
     printf("i : %d\n",i);
 
+    char mayus;
+    mayus = toupper(nombre1[7]);
+    printf("caracter 7 mayus : %c",mayus);
     
 
     return 0;
