@@ -9,6 +9,14 @@ typedef struct {
     float nota; // Nota del estudiante
 } Estudiante;
 
+void menu() {
+    printf("\n--- Menú de Gestión de Notas ---\n");
+    printf("1. Agregar estudiante\n");
+    printf("2. Mostrar estudiantes\n");
+    printf("3. Actualizar nota de un estudiante\n");
+    printf("4. Salir\n");
+}
+
 int main(){
     int cantidad = 0;
     int opcion;
@@ -35,7 +43,6 @@ int main(){
                 printf("Opción inválida. Intente de nuevo.\n");
         }
     } while (opcion != 4);
-
 
     return 0;
 }
