@@ -10,6 +10,9 @@ int main(void){
     strcpy(nombre2,nombre1);
     printf("%s\n",nombre2);
 
-
+    int largo;
+    largo = strlen(nombre1);
+    printf("Longitud de nombre1: %d",largo);
+    
     return 0;
 }
