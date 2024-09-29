@@ -88,7 +88,7 @@ int main() {
     int cantidad = 0, opcion;
 
     do {
-        printf("\n1. Agregar estudiante\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n");
+        printf("\n1. Agregar estudiante Nelson\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n");
         printf("Seleccione una opción: ");
         scanf("%d", &opcion);
 
