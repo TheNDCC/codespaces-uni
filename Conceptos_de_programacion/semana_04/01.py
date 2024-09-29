@@ -27,4 +27,6 @@ for i in range(0,numero,1):
     mt = float(input(" el valor de la altura metros "))
     mt = float(input("el peso en kg "))
     
-    print(f"Tu IMC es {IMC(kg,mt):.2f}, lo que indica que tienes {Clasificacion_IMC(IMC(kg,mt))}.")
+    indice_imc = IMC(kg,mt)
+    
+    print(f"Tu IMC es {indice_imc:.2f}, lo que indica que tienes {Clasificacion_IMC(indice_imc)}.")
