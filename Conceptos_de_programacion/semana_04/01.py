@@ -25,7 +25,7 @@ for i in range(0,numero,1):
     mt = 0
     kg = 0
     mt = float(input(" el valor de la altura metros "))
-    mt = float(input("el peso en kg "))
+    kg = float(input("el peso en kg "))
     
     indice_imc = IMC(kg,mt)
     
