@@ -20,7 +20,6 @@ while True:
         break
     else:
         print("Entrada inválida. Por favor, ingresa la cantidad de usuario, otra vez.")
-        
 
 for i in numero:
     mt = 0
