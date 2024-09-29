@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <string.h>
+
+#define MAX_ESTUDIANTES 100
 
 typedef struct {
     char nombre[50];
@@ -6,8 +9,32 @@ typedef struct {
     float nota; // Nota del estudiante
 } Estudiante;
 
-int main(void){
+int main(){
+    int cantidad = 0;
+    int opcion;
 
+    do {
+        menu();
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                agregarEstudiante(estudiantes, &cantidad);
+                break;
+            case 2:
+                mostrarEstudiantes(estudiantes, cantidad);
+                break;
+            case 3:
+                actualizarNota(estudiantes, cantidad);
+                break;
+            case 4:
+                printf("Saliendo del programa...\n");
+                break;
+            default:
+                printf("Opción inválida. Intente de nuevo.\n");
+        }
+    } while (opcion != 4);
 
 
     return 0;
