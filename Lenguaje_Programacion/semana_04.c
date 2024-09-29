@@ -16,12 +16,12 @@ void agregarEstudiante(int *cantidad) {
         return;
     }
 
-    printf("Ingrese el nombre del estudiante: ");
+    printf("Ingrese el nombre del estudiante: \n");
     scanf(" %[^\n]", nombres[*cantidad]);
 
     // Validar el grado (2 o 3)
     do {
-        printf("Ingrese el grado (2: segundo año, 3: tercer año): ");
+        printf("Ingrese el grado (2: segundo año, 3: tercer año): \n");
         scanf("%d", &grados[*cantidad]);
         if (grados[*cantidad] != 2 && grados[*cantidad] != 3) {
             printf("Grado inválido. Solo se acepta 2 o 3.\n");
@@ -88,7 +88,7 @@ int main() {
     int cantidad = 0, opcion;
 
     do {
-        printf("\n1. Agregar estudiante Nelson\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n");
+        printf("\n1. Agregar estudiante Nelson\n2. Mostrar estudiantes\n3. Actualizar nota\n4. Salir\n\n");
         printf("Seleccione una opción: ");
         scanf("%d", &opcion);
 
