@@ -70,7 +70,7 @@ int main() {
         scanf("%d", &opcion);
 
         switch(opcion) {
-            case 1: agregarEstudiante(estudiantes, &cantidad); break;
+            case 1: agregarEstudiante(estudiantes, cantidad); break;
             case 2: mostrarEstudiantes(estudiantes, cantidad); break;
             case 3: actualizarNota(estudiantes, cantidad); break;
             case 4: printf("Saliendo...\n"); break;
