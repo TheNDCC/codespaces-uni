@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main(void){
     char nombre1[]="Mi nombre es chelin";
@@ -22,7 +23,7 @@ int main(void){
     char mayus;
     mayus = toupper(nombre1[7]);
     printf("caracter 7 mayus : %c",mayus);
-    
+
 
     return 0;
 }
