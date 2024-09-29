@@ -21,7 +21,7 @@ while True:
     else:
         print("Entrada inválida. Por favor, ingresa la cantidad de usuario, otra vez.")
 
-for i in int(numero):
+for i in numero:
     mt = 0
     kg = 0
     mt = int(input(" el valor de la altura metros"))
