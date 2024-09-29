@@ -4,7 +4,7 @@ int main(){
     char palabra[20];
 
     do{
-        scanf("%s,palabra");
+        scanf("%s",palabra);
 
         if (!feof(stdin)){
             printf("\n%s",palabra);
