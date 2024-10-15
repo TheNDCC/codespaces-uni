@@ -6,7 +6,7 @@ int main() {
     printf("¿Cuántos números deseas ingresar? ");
     scanf("%d", &n);
 
-    int arr[n];  
+    int arr[n];
 
     printf("Introduce los números enteros:\n");
     for (i = 0; i < n; i++) {
