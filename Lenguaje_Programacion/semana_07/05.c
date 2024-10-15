@@ -1,45 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void calcularFibonacci(int n, int *fibonacci) {
-    if (n >= 1) {
-        fibonacci[0] = 0; // Primer término
+void generarSerieFibonacci(int cantidad, int *serieFibonacci) {
+    if (cantidad >= 1) {
+        serieFibonacci[0] = 0; // Primer término
     }
-    if (n >= 2) {
-        fibonacci[1] = 1; // Segundo término
+    if (cantidad >= 2) {
+        serieFibonacci[1] = 1; // Segundo término
     }
 
-    for (int i = 2; i < n; i++) {
-        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    for (int indice = 2; indice < cantidad; indice++) {
+        serieFibonacci[indice] = serieFibonacci[indice - 1] + serieFibonacci[indice - 2];
     }
 }
 
 int main() {
-    int n;
+    int cantidad;
 
-    printf("¿Cuantos términos de la serie de Fibonacci desea calcular?\n");
-    scanf("%d", &n);
+    printf("¿Cuántos términos de la serie de Fibonacci desea calcular?\n");
+    scanf("%d", &cantidad);
 
-    if (n <= 0) {
+    if (cantidad <= 0) {
         printf("Por favor, ingrese un número positivo.\n");
         return 1;
     }
 
-    int *fibonacci = (int*)malloc(n * sizeof(int));
-    if (fibonacci == NULL) {
+    int *serieFibonacci = (int*)malloc(cantidad * sizeof(int));
+    if (serieFibonacci == NULL) {
         printf("Error al asignar memoria.\n");
         return 1;
     }
 
-    calcularFibonacci(n, fibonacci);
+    generarSerieFibonacci(cantidad, serieFibonacci);
 
-    printf("Los primeros %d términos de la serie de Fibonacci son:\n", n);
-    for (int i = 0; i < n; i++) {
-        printf("%d ", fibonacci[i]);
+    printf("Los primeros %d términos de la serie de Fibonacci son:\n", cantidad);
+    for (int indice = 0; indice < cantidad; indice++) {
+        printf("%d ", serieFibonacci[indice]);
     }
     printf("\n");
 
-    free(fibonacci);
+    free(serieFibonacci);
 
     return 0;
 }
