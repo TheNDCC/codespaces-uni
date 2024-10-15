@@ -17,21 +17,17 @@ void ordenarDescendente(int *arr, int n) {
 int main() {
     int n;
 
-
     printf("¿Cuántos números deseas ingresar? \n");
     scanf("%d", &n);
 
     int arr[n];
-
 
     printf("Introduce los números enteros:\n");
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-
     ordenarDescendente(arr, n);
-
 
     printf("Números en orden descendente:\n");
     for (int i = 0; i < n; i++) {
