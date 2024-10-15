@@ -1,34 +1,34 @@
 #include <stdio.h>
 #include <string.h>
 
-void cifradoCesar(const char *palabra, char *cifrada, int desplazamiento) {
-    for (int i = 0; palabra[i] != '\0'; i++) {
-        char letra = palabra[i];
+void cifradoCesar(const char *mensaje, char *resultado, int clave) {
+    for (int indice = 0; mensaje[indice] != '\0'; indice++) {
+        char caracter = mensaje[indice];
 
-        if (letra >= 'a' && letra <= 'z') {
-            cifrada[i] = (letra - 'a' + desplazamiento) % 26 + 'a';
-        } else if (letra >= 'A' && letra <= 'Z') {
-            cifrada[i] = (letra - 'A' + desplazamiento) % 26 + 'A';
+        if (caracter >= 'a' && caracter <= 'z') {
+            resultado[indice] = (caracter - 'a' + clave) % 26 + 'a';
+        } else if (caracter >= 'A' && caracter <= 'Z') {
+            resultado[indice] = (caracter - 'A' + clave) % 26 + 'A';
         } else {
-            cifrada[i] = letra;
+            resultado[indice] = caracter;
         }
     }
 }
 
 int main() {
-    char palabra[100];
-    char cifrada[100];
-    int desplazamiento = 3; // Desplazamiento del cifrado
+    char mensaje[100];
+    char resultado[100];
+    int clave = 3;
 
-    printf("Ingrese una palabra:\n");
-    scanf("%99s", palabra);
+    printf("Ingrese un mensaje:\n");
+    scanf("%99s", mensaje);
 
-    cifradoCesar(palabra, cifrada, desplazamiento);
+    cifradoCesar(mensaje, resultado, clave);
 
-    cifrada[strlen(palabra)] = '\0';
+    resultado[strlen(mensaje)] = '\0';
 
-    printf("Palabra original: %s\n", palabra);
-    printf("Palabra cifrada: %s\n", cifrada);
+    printf("Mensaje original: %s\n", mensaje);
+    printf("Mensaje cifrado: %s\n", resultado);
 
     return 0;
 }
