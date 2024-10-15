@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-void calcularLongitud(const char *cadena, int *longitud) {
-    *longitud = 0;
-    while (cadena[*longitud] != '\0') {
-        (*longitud)++;
+void obtenerTamanio(const char *texto, int *tamanio) {
+    *tamanio = 0;
+    while (texto[*tamanio] != '\0') {
+        (*tamanio)++;
     }
 }
 
 int main() {
-    char cadena[100];
-    int longitud;
+    char texto[100];
+    int tamanio;
 
-    printf("Ingrese una cadena de caracteres:\n");
-    scanf("%99s", cadena); // Leer la cadena (hasta 99 caracteres)
+    printf("Ingrese un texto:\n");
+    scanf("%99s", texto); // Leer el texto (hasta 99 caracteres)
 
-    calcularLongitud(cadena, &longitud);
+    obtenerTamanio(texto, &tamanio);
 
-    printf("La longitud de la cadena es: %d\n", longitud);
+    printf("El tamaño del texto es: %d\n", tamanio);
 
     return 0;
 }
