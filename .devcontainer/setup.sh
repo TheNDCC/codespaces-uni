@@ -1,3 +1,4 @@
+echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 # Actualizar repositorio
 apk update
 # Instalar paquetes para desarrollo en C/C++
@@ -6,6 +7,8 @@ apk add build-base gdb clang cmake autoconf automake libtool valgrind
 apk add python3 py3-pip
 # Instalar paquetes para desarrollo en Java
 apk add openjdk21-jdk
+# Instalar Swi-Prolog
+apk add swi-prolog
 # Instalar git
 apk add git
 # Otros paquetes
